@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.welcome-page {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-page > h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-top: 6%;
+    margin-bottom: 20px;
+}
+.welcome-page > h3 {
+    font-size: 2rem;
+    position: relative;
+    font-weight: 600;
+}
+$firefly: #0C1B23;
+$bunker: #141D1D;
+$grayNurse: #E9EAE9;
+$pewter: #9da09f;
+$white: #fff;
+
+.info-card {
+    min-width: 80%;
+    max-width: 90rem;
+    min-height: 70%;
+    height: 33rem;
+    width: 78rem;
+    margin: 0 auto;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0.01rem 0.01rem 1rem $firefly;
+    border-radius: 25px;
+}
+
+.info-card__content {
+    float: left;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card__image-exposure {
+    width: 45%;
+}
+
+.info-card__bio {
+    width: 55%;
+    padding: 5rem;
+    height: auto;
+    font-family: 'Domine', serif;
+
+    &--title {
+        color: $bunker;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    &--copy {
+        color: $pewter;
+        line-height: 2;
+    }
+    &--button {
+        background-color: #faebd7;
+        padding: 10px;
+        border-radius: 20px;
+        position: relative;
+        left: 37%;
+    }
+}
+
+.info-card__image-exposure__item {
+    background-image: url('https://omnivorescookbook.com/wp-content/uploads/2020/04/200309_Bean-Sprouts-Stir-Fry_3.jpg');
+    background-color: $white;
+    background-position: 50%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius: 25px 2px 0px 20px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    opacity: 0.9;
+}
+
+@keyframes blendAnimate {
+    0% {
+        background-position: 0;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0;
+    }
+}
+
+.MenuPage{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
