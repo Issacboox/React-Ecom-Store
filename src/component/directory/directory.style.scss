@@ -9,16 +9,17 @@
     align-items: center;
 }
 .welcome-page > h1 {
+    font-family: Mali;
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 3rem;
-    margin-top: 6%;
     margin-bottom: 20px;
 }
 .welcome-page > h3 {
     font-size: 2rem;
     position: relative;
     font-weight: 600;
+    font-family: Mali;
 }
 $firefly: #0C1B23;
 $bunker: #141D1D;
@@ -35,10 +36,13 @@ $white: #fff;
     margin: 0 auto;
     position: relative;
     background-color: #fff;
-    box-shadow: 0.01rem 0.01rem 1rem $firefly;
+    box-shadow: 0.01rem 0.01rem 1rem $firefly;    
+    // transition: transform 0.5s ease-in-out;
     border-radius: 25px;
 }
-
+.info-card{
+    // transform: scale(1.03);
+}
 .info-card__content {
     float: left;
     height: 100%;
@@ -54,12 +58,13 @@ $white: #fff;
     width: 55%;
     padding: 5rem;
     height: auto;
-    font-family: 'Domine', serif;
+    font-family: 'Mitr', serif;
 
     &--title {
         color: $bunker;
         font-size: 2rem;
-        font-weight: 300;
+        font-weight: 600;
+        font-family: Mali;
     }
 
     &--copy {
@@ -69,9 +74,12 @@ $white: #fff;
     &--button {
         background-color: #faebd7;
         padding: 10px;
-        border-radius: 20px;
-        position: relative;
-        left: 37%;
+        border-radius: 20px; 
+           
+    }
+    &--button:hover{
+        background-color: green;
+        color: #E9EAE9;
     }
 }
 
