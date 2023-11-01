@@ -3,24 +3,24 @@
         "id": 1,
         "name": "Carrot",
         "imgURL": "https://cdn-icons-png.flaticon.com/512/4796/4796231.png",
-        "price": 0.99
+        "price": 20
       },
       {
         "id": 2,
         "name": "Broccoli",
         "imgURL": "https://cdn-icons-png.flaticon.com/512/4796/4796240.png",
-        "price": 1.49
+        "price": 40
       },
       {
         "id": 3,
         "name": "Corn",
         "imgURL": "https://cdn-icons-png.flaticon.com/512/4796/4796216.png",
-        "price": 2.99
+        "price": 35
       },
       {
         "id": 4,
         "name": "Banana",
         "imgURL": "https://cdn-icons-png.flaticon.com/512/4796/4796209.png",
-        "price": 2.99
+        "price": 20
       }
 ]

@@ -1,8 +1,22 @@
+.bg-page::before {
+  content: "";
+  background: url('https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/363495901_665764935679227_2233761305744879134_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeGo4ef_xO6cLCG9SJRP0wzyJ_NJ4HlfNIEn80ngeV80gXun3M_kv3CX5qsRWGQ9RdC0dxu3QgRSAHhHkci0FYAP&_nc_ohc=Y4FGN8ALpikAX9THkug&_nc_ht=scontent.fbkk7-2.fna&oh=03_AdTSXZFUpwC0Jr0HOPrn7fSsWrkZs0oqPpdyRxysJOH7tQ&oe=6569915D');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1; /* Set the opacity to 0.2 for the background image overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 91vh;
+  z-index: -1;
+}
+
 .product-container {
   padding: 20px 40px;
-  margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 15px;
   row-gap: 50px;
 }
