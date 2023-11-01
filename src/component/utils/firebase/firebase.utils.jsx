@@ -1,10 +1,13 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { initializeApp } from "firebase/app";
+
 import {
   getAuth,
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -20,35 +23,52 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
-provider.setCustomParameters({
+googleProvider.setCustomParameters({
   prompt: "select_account",
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () =>
+  signInWithRedirect(auth, googleProvider);
 // direct to db in console
 export const db = getFirestore();
 
-export const createUserDocFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInformation = {}
+) => {
+    if (!userAuth) return;
   const UserDocRef = doc(db, "users", userAuth.uid);
   console.log(UserDocRef);
 
-  const userSnapShot = await getDoc(UserDocRef);
-  console.log(userSnapShot);
-  console.log(userSnapShot.exists());
+  const userSnapshot = await getDoc(UserDocRef);
+  //   console.log(userSnapShot);
+  //   console.log(userSnapShot.exists());
 
-  if (!userSnapShot.exists()) {
+  if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
-    const createAt = new Date();
+    const createdAt = new Date();
     try {
-      await setDoc(UserDocRef, { displayName, email, createAt });
+      await setDoc(UserDocRef, {
+        displayName,
+        email,
+        createdAt,
+        ...additionalInformation,
+      });
     } catch (error) {
-      console.log("error craeting user", error.message);
+      console.log("error creating the user", error.message);
     }
   }
-  // if user data exist
+
   return UserDocRef;
-  //return userDoc
 };
+
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+    if (!email || !password) return;
+  
+    return await createUserWithEmailAndPassword(auth, email, password);
+  };
