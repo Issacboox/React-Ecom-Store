@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-const FormInput = ({ label,...inputOption }) => {
+const FormInput = ({ label,...option }) => {
     return (
         <>
          <label>{label}</label>
           <input
-           {...inputOption}
+           {...option}
           />
         </>
     );

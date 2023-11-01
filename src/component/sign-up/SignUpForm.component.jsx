@@ -6,8 +6,9 @@ import {
 } from "../../component/utils/firebase/firebase.utils";
 import FormInput from "../form-input/FormInput.component";
 import "./signup.style.scss";
-import  Button from "../button/Button.component";
+import Button from "../button/Button.component";
 
+// Initialize default form fields
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -15,38 +16,41 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 
+// Define the SignUpForm component
 const SignUpForm = () => {
+  // State management using useState
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  // Function to reset form fields
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
-  const isPasswordValid = (password) => {
-    return password.length >= 6;
-  };
 
+  // Form submission handler
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!isPasswordValid(password)) {
-      alert("Password should be at least 6 characters");
-      return;
-    }
-
+    // Check if passwords match
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
 
     try {
+      // Attempt to create a user with email and password
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
+
+      // Create a user document with user information
       await createUserDocumentFromAuth(user, { displayName });
+      alert('Sign up Complete ✅');
+      // Reset the form fields
       resetFormFields();
     } catch (error) {
+      // Handle different types of errors
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user, email already in use");
       } else {
@@ -55,69 +59,73 @@ const SignUpForm = () => {
     }
   };
 
+  // Function to handle changes in form fields
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormFields({ ...formFields, [name]: value });
   };
 
+  // JSX rendering
   return (
-    <div className="contentForm">
+    <div className="bg-page">
+        <div className="contentForm">
       <div className="imgSignup">
-        <img src='' alt=""/>
+        <img src="" alt="" />
       </div>
       <div className="formSignUp">
         <h1> Sign up 🐧</h1>
         <form onSubmit={handleSubmit}>
           <FormInput
             label="👩🏻‍💻 Username"
-            inputOption={{
-              type: "text",
-              required: true,
-              onChange: handleChange,
-              name: "displayName",
-              value: { displayName },
-            }}
+            type="text"
+            required
+            onChange={handleChange}
+            name="displayName"
+            value={displayName}
           />
 
           <FormInput
             label="💌 Email"
-            inputOption={{
-              type: "email",
-              required: true,
-              onChange: handleChange,
-              name: "email",
-              value: email,
-            }}
+            type="email"
+            required
+            onChange={handleChange}
+            name="email"
+            value={email}
           />
 
           <FormInput
             label="🔑 Password"
-            inputOption={{
-              type: "password",
-              required: true,
-              onChange: handleChange,
-              name: "password",
-              value: password,
-            }}
+            type="password"
+            required
+            onChange={handleChange}
+            name="password"
+            value={password}
           />
 
           <FormInput
             label="✅ Confirm Password"
-            inputOption={{
-              type: "password",
-              required: true,
-              onChange: handleChange,
-              name: confirmPassword,
-              value: confirmPassword,
-            }}
+            type="password"
+            required
+            onChange={handleChange}
+            name="confirmPassword"
+            value={confirmPassword}
           />
-
-          <Button type="submit">Sign up</Button>
+<p>
+            Already have account ?{" "}
+            <a href="/auth">
+              <b className="text-danger">Sign in here!</b>
+            </a>
+          </p>
+          <Button buttonType="confirm" type="submit">
+            Sign up
+          </Button>
         </form>
       </div>
     </div>
+    </div>
+  
   );
 };
 
+// Export the SignUpForm component
 export default SignUpForm;

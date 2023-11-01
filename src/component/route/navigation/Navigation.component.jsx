@@ -8,13 +8,13 @@ export default function Navigation() {
       <div className="navigation">
         <Link className="glow mt-2 ms-3" to='/'>
         {/* <img src={Logo} alt="logo" className="logo mt-2"/> */}
-        🫛BeanSprouts
+        🥗 BeanSprouts
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to="/">
             HOME
           </Link>
-          <Link className="nav-link" to="/signin">
+          <Link className="nav-link" to="/auth">
             SIGN IN
           </Link>
         </div>

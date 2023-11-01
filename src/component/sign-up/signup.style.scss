@@ -1,10 +1,29 @@
+// .bg-page {
+//     position: relative;
+//   }
+  
+  .bg-page::before {
+    content: "";
+    background: url('https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/363495901_665764935679227_2233761305744879134_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeGo4ef_xO6cLCG9SJRP0wzyJ_NJ4HlfNIEn80ngeV80gXun3M_kv3CX5qsRWGQ9RdC0dxu3QgRSAHhHkci0FYAP&_nc_ohc=Y4FGN8ALpikAX9THkug&_nc_ht=scontent.fbkk7-2.fna&oh=03_AdTSXZFUpwC0Jr0HOPrn7fSsWrkZs0oqPpdyRxysJOH7tQ&oe=6569915D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1; /* Set the opacity to 0.2 for the background image overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+
 .contentForm{
-    min-height: 80vh;
+    height: 94vh;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .formSignUp{
@@ -44,16 +63,3 @@
     transition: 1s;
 }
 
-.formSignUp > form > button {
-    margin-top: 10px;
-    background-color: rgb(140, 201, 84);
-    padding: 10px;
-    font-size: larger;
-    font-weight: 600;
-    border-radius: 20px;
-}
-
-.formSignUp > form > button:hover {
-    background-color: green;
-    color: #ffffff;
-}
