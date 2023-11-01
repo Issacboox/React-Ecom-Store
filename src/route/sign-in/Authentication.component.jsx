@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import SignInForm from "../../sign-in-form/SignInForm.component";
+import SignInForm from "../../component/sign-in-form/SignInForm.component";
 import "./signIn.style.scss";
 
 const Authentication = () => {

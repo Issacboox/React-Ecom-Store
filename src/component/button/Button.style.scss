@@ -27,3 +27,18 @@
 .google:hover {
     background-color: rgb(240, 82, 82);
 }
+
+.cart {
+    background-color: rgb(255, 196, 0);
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.cart:hover {
+    background-color: rgb(255, 145, 0);
+}

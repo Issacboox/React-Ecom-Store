@@ -7,6 +7,7 @@ import "./Button.style.scss";
 const BUTTON_TYPE = {
   google: "google",
   confirm: "confirm",
+  cart :"cart"
 };
 
 const Button = ({ children, buttonType, ...otherProps }) => {

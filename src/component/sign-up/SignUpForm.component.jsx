@@ -4,6 +4,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../component/utils/firebase/firebase.utils";
+
 import FormInput from "../form-input/FormInput.component";
 import "./signup.style.scss";
 import Button from "../button/Button.component";
@@ -43,10 +44,9 @@ const SignUpForm = () => {
         email,
         password
       );
-
       // Create a user document with user information
       await createUserDocumentFromAuth(user, { displayName });
-      alert('Sign up Complete ✅');
+      alert("Sign up Complete ✅");
       // Reset the form fields
       resetFormFields();
     } catch (error) {
@@ -68,62 +68,61 @@ const SignUpForm = () => {
   // JSX rendering
   return (
     <div className="bg-page">
-        <div className="contentForm">
-      <div className="imgSignup">
-        <img src="" alt="" />
-      </div>
-      <div className="formSignUp">
-        <h1> Sign up 🐧</h1>
-        <form onSubmit={handleSubmit}>
-          <FormInput
-            label="👩🏻‍💻 Username"
-            type="text"
-            required
-            onChange={handleChange}
-            name="displayName"
-            value={displayName}
-          />
+      <div className="contentForm">
+        <div className="imgSignup">
+          <img src="" alt="" />
+        </div>
+        <div className="formSignUp">
+          <h1> Sign up 🐧</h1>
+          <form onSubmit={handleSubmit}>
+            <FormInput
+              label="👩🏻‍💻 Username"
+              type="text"
+              required
+              onChange={handleChange}
+              name="displayName"
+              value={displayName}
+            />
 
-          <FormInput
-            label="💌 Email"
-            type="email"
-            required
-            onChange={handleChange}
-            name="email"
-            value={email}
-          />
+            <FormInput
+              label="💌 Email"
+              type="email"
+              required
+              onChange={handleChange}
+              name="email"
+              value={email}
+            />
 
-          <FormInput
-            label="🔑 Password"
-            type="password"
-            required
-            onChange={handleChange}
-            name="password"
-            value={password}
-          />
+            <FormInput
+              label="🔑 Password"
+              type="password"
+              required
+              onChange={handleChange}
+              name="password"
+              value={password}
+            />
 
-          <FormInput
-            label="✅ Confirm Password"
-            type="password"
-            required
-            onChange={handleChange}
-            name="confirmPassword"
-            value={confirmPassword}
-          />
-<p>
-            Already have account ?{" "}
-            <a href="/auth">
-              <b className="text-danger">Sign in here!</b>
-            </a>
-          </p>
-          <Button buttonType="confirm" type="submit">
-            Sign up
-          </Button>
-        </form>
+            <FormInput
+              label="✅ Confirm Password"
+              type="password"
+              required
+              onChange={handleChange}
+              name="confirmPassword"
+              value={confirmPassword}
+            />
+            <p>
+              Already have account ?{" "}
+              <a href="/auth">
+                <b className="text-danger">Sign in here!</b>
+              </a>
+            </p>
+            <Button buttonType="confirm" type="submit">
+              Sign up
+            </Button>
+          </form>
+        </div>
       </div>
     </div>
-    </div>
-  
   );
 };
 
