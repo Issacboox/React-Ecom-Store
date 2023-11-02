@@ -9,14 +9,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 91vh;
+  height: 93vh;
   z-index: -1;
 }
 
-.product-container {
-  padding: 20px 40px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 15px;
-  row-gap: 50px;
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
 }

@@ -1,0 +1,19 @@
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+    padding: 30px;
+}
+
+.titles {
+    font-size: 28px;
+    font-weight: 600;
+    // margin-top: 20px;
+    margin-left: 25px;
+    position: relative;
+    top: 20px;
+    left: 5px;
+    // bottom: 10px;
+    cursor: pointer;
+}

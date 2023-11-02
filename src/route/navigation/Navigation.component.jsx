@@ -6,7 +6,7 @@ import CartIcon from "../../component/cart-icon/CartIcon.component";
 import CartDrop from "../../component/cart-dropdown/CartDrop.component";
 import { UserContext } from "../../context/user.context";
 import { CartContext } from "../../context/cart.context";
-import {signOutUser} from '../../component/utils/firebase/firebase.utils'
+import {signOutUser} from '../../utils/firebase/firebase.utils'
 export default function Navigation() {
   const { currentUser } = useContext(UserContext);
   const {isCartOpen} = useContext(CartContext)

@@ -1,18 +1,17 @@
-/* eslint-disable no-unused-vars */
-import { useContext, useState } from "react";
-import { ProductContext } from "../../context/product.context";
-import ProductCart from "../../component/product-cart/ProductCart.component";
+import { Routes, Route } from "react-router-dom";
+
+import CategoriesPreview from "../categories-preview/categories-preview.component";
+import Category from "../category/category.component";
+
 import "./shop.style.scss";
+
 const Shop = () => {
-  const { product } = useContext(ProductContext);
   return (
     <div className="bg-page">
-     
-        <div className="product-container">
-          {product.map((product) => (
-            <ProductCart key={product.id} product={product} />
-          ))}
-        </div>
+      <Routes>
+        <Route index element={<CategoriesPreview />} />
+        <Route path=':category' element={<Category />} />
+      </Routes>
     </div>
   );
 };
