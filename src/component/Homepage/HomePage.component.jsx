@@ -1,16 +1,16 @@
 /* eslint-disable react/prop-types */
-import './homepage.style.scss';
+import "./homepage.style.scss";
 
-const Homepage = ({ menu }) => { 
-  const { imgURL, title, desc, link } = menu; 
+const Homepage = ({ menu }) => {
+  const { imgURL, title, desc, link } = menu;
   return (
-    <div className="blog-card">
-      <img src={imgURL} alt={title} /> 
-      <div className="blog-content">
-        <p className="blog-label">{title}</p> 
-        <p>{desc}</p> 
-        <a href={link}>
-          <button className="read-more-btn">...อ่านเพิ่มเติม</button>
+    <div className="card" style={{ width: '18rem',borderRadius: '20px' }}>
+      <img className="card-img-top imgCover" src={imgURL} alt={title} />
+      <div className="card-body">
+        <h5 className="card-title title">{title}</h5>
+        <p className="card-text">{desc}</p>
+        <a href={link} className="button-read mt-1">
+          ...อ่านเพิ่มเติม 
         </a>
       </div>
     </div>

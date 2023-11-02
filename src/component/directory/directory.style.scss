@@ -2,120 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.welcome-page {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-.welcome-page > h1 {
-    font-family: Mali;
-    text-align: center;
-    font-weight: 600;
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-.welcome-page > h3 {
-    font-size: 2rem;
-    position: relative;
-    font-weight: 600;
-    font-family: Mali;
-}
-$firefly: #0C1B23;
-$bunker: #141D1D;
-$grayNurse: #E9EAE9;
-$pewter: #9da09f;
-$white: #fff;
-
-.info-card {
-    min-width: 80%;
-    max-width: 90rem;
-    min-height: 70%;
-    height: 33rem;
-    width: 78rem;
-    margin: 0 auto;
-    position: relative;
-    background-color: #fff;
-    box-shadow: 0.01rem 0.01rem 1rem $firefly;    
-    // transition: transform 0.5s ease-in-out;
-    border-radius: 25px;
-}
-.info-card{
-    // transform: scale(1.03);
-}
-.info-card__content {
-    float: left;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.info-card__image-exposure {
-    width: 45%;
-}
-
-.info-card__bio {
-    width: 55%;
-    padding: 5rem;
-    height: auto;
-    font-family: 'Mitr', serif;
-
-    &--title {
-        color: $bunker;
-        font-size: 2rem;
-        font-weight: 600;
-        font-family: Mali;
-    }
-
-    &--copy {
-        color: $pewter;
-        line-height: 2;
-    }
-    &--button {
-        background-color: #faebd7;
-        padding: 10px;
-        border-radius: 20px; 
-           
-    }
-    &--button:hover{
-        background-color: green;
-        color: #E9EAE9;
-    }
-}
-
-.info-card__image-exposure__item {
-    background-image: url('https://omnivorescookbook.com/wp-content/uploads/2020/04/200309_Bean-Sprouts-Stir-Fry_3.jpg');
-    background-color: $white;
-    background-position: 50%;
-    background-size:cover;
+.bg-page::before {
+    content: "";
+    background: url('https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/363495901_665764935679227_2233761305744879134_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeGo4ef_xO6cLCG9SJRP0wzyJ_NJ4HlfNIEn80ngeV80gXun3M_kv3CX5qsRWGQ9RdC0dxu3QgRSAHhHkci0FYAP&_nc_ohc=Y4FGN8ALpikAX9THkug&_nc_ht=scontent.fbkk7-2.fna&oh=03_AdTSXZFUpwC0Jr0HOPrn7fSsWrkZs0oqPpdyRxysJOH7tQ&oe=6569915D');
     background-repeat: no-repeat;
-    border-radius: 25px 2px 0px 20px;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1; /* Set the opacity to 0.2 for the background image overlay */
     position: absolute;
-    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+.home-page{
+    display: block;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+//   margin-top: 20px;
+}
+.MenuPage {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 20px;
+  gap: 15px;
+  row-gap: 20px;
 }
 
-@keyframes blendAnimate {
-    0% {
-        background-position: 0;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
-    100% {
-        background-position: 0;
-    }
+.topic-card{
+    font-size: 2rem;
+    margin-top: 15px;
+    // text-align: center;
+    font-family: Mali;
 }
 
-.MenuPage{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
+.image-topic{
+    color: white;
+    font-size: 5.3rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 10px;
+    background-color: rgba(105, 105, 105, 0.411)
+}
+.image-desc{
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.363);
 }

@@ -5,7 +5,7 @@ const Home = () => {
  const Menu = [
     {
       id: 1,
-      title: "ผัดไทย",
+      title: "ผัดไทย ",
       desc: "เมนูเส้นที่เป็นอาหารประจำชาติไทย เป็นเมนูที่คนไทยทานเป็นกิจวัตร และเป็นเมนูที่ต่างชาติยกนิ้วให้ในความอร่อย รสชาติที่ทานง่ายทำให้ถูกปาก",
       link: "https://www.foodpanda.co.th/contents/pad-thai-recipe",
       imgURL:
@@ -34,6 +34,14 @@ const Home = () => {
       link: "https://cooking.kapook.com/view215353.html",
       imgURL:
         "https://s359.kapook.com//pagebuilder/89623c4b-ef4a-402f-9916-3e650438b244.jpg",
+    },
+    {
+      id: 5,
+      title: "ซุปถั่วงอก เกาหลี ใส่กิมจิ",
+      desc: "ซุปถั่วงอกเป็นเมนูอาหารเช้าสุดเบสิกสำหรับคนเกาหลีเลยค่ะ เมนูนี้มีรสชาติเบา ๆ แต่อร่อยกลมกล่อม สามารถทานพร้อมข้าวหรือดื่มแก้แฮงค์ได้เป็นอย่างดี ",
+      link: "https://image.bestreview.asia/wp-content/uploads/2022/06/bean-sprouts-and-kimchi-soup.jpg",
+      imgURL:
+        "https://image.bestreview.asia/wp-content/uploads/2022/06/bean-sprouts-and-kimchi-soup.jpg",
     },
   ];
 
