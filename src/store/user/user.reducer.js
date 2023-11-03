@@ -12,7 +12,7 @@ import { USER_ACTION_TYPES } from "./user.types";
       case USER_ACTION_TYPES.SET_CURRENT_USER:
         return { ...state, currentUser: payload };
       default:
-        throw state;
+        return state;
     }
   };
   
