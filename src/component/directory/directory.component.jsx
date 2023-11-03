@@ -5,10 +5,11 @@ import Header from "./header.component";
 // const welcomeTxt = 'ยินดีต้อนรับสู่ร้านถั่วงอก 👏'
 const Directory = ({ menu }) => {
   return (
-    <div className="bg-page">
+    <div className="">
+     <Header />
     <div className="home-page">
-      <Header />
-      <h1 className="topic-card">เมนูถั่วงอกแนะนำ 🫛</h1>
+    
+      <h1 className="topic-card ">เมนูถั่วงอกแนะนำ 🫛</h1>
       <div className="main">
         <div className="MenuPage">
           {menu.map((menus) => (

@@ -1,16 +1,20 @@
-/* eslint-disable no-unused-vars */
-import { Fragment, useContext } from "react";
-import "./navigation.styles.scss";
 import { Outlet, Link } from "react-router-dom";
+import { Fragment, useContext } from "react";
+import { useSelector } from "react-redux";
+
 import CartIcon from "../../component/cart-icon/CartIcon.component";
 import CartDrop from "../../component/cart-dropdown/CartDrop.component";
-import { UserContext } from "../../context/user.context";
+
 import { CartContext } from "../../context/cart.context";
-import {signOutUser} from '../../utils/firebase/firebase.utils'
-export default function Navigation() {
-  const { currentUser } = useContext(UserContext);
-  const {isCartOpen} = useContext(CartContext)
-   // console.log(currentUser)
+import { signOutUser } from "../../utils/firebase/firebase.utils";
+import "./navigation.styles.scss";
+
+
+
+const Navigation = () => {
+  const currentUser = useSelector((state) => state.user.currentUser )
+  const { isCartOpen } = useContext(CartContext);
+ 
   return (
     <Fragment>
       <div className="navigation">
@@ -26,8 +30,9 @@ export default function Navigation() {
             SHOP
           </Link>
           {currentUser ? (
-            
-            <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>
+            <span className="nav-link" onClick={signOutUser}>
+              SIGN OUT
+            </span>
           ) : (
             <Link className="nav-link" to="/auth">
               SIGN IN
@@ -35,9 +40,11 @@ export default function Navigation() {
           )}
           <CartIcon />
         </div>
-        {isCartOpen && <CartDrop/>}    
+        {isCartOpen && <CartDrop />}
       </div>
       <Outlet />
     </Fragment>
   );
-}
+};
+
+export default Navigation;

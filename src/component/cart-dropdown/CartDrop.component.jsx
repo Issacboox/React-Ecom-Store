@@ -7,11 +7,12 @@ import Button from "../button/Button.component";
 
 const CartDrop = () => {
   const { cartItems } = useContext(CartContext);
+
   const navigate = useNavigate();
 
   const goToCheckOutHandler = () => {
-    navigate('/checkout')
-  }
+    navigate("/checkout");
+  };
   return (
     <div className="cart-dropdown-container">
       <div className="cart-item" style={{ overflow: "auto" }}>
@@ -19,7 +20,9 @@ const CartDrop = () => {
           <CartItem key={item.id} cartItems={item} />
         ))}
       </div>
-      <Button buttonType="cart" onClick={goToCheckOutHandler}>Check out 🧺</Button>
+      <Button buttonType="cart" onClick={goToCheckOutHandler}>
+        Check out 🧺
+      </Button>
     </div>
   );
 };
