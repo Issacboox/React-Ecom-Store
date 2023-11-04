@@ -1,18 +1,19 @@
 /* eslint-disable react/prop-types */
-import './CartItem.style.scss'
+import { CartItemContainer, ItemDetails } from './CartItem.style';
 
-const CartItem = ({cartItems}) => {
-    const { name, imgURL, quantity, price } = cartItems ;
-    return (
-        <div className='cart-item-container'>
-            <img src={imgURL} alt={`${name}`}/>
-            <div className='item-details'>
-                <span className='name'>{name}</span>
-            <span className='price'>{quantity} x {price}฿</span>
-            </div>
-          
-        </div>
-    );
-}
+const CartItem = ({ cartItem }) => {
+  const { name, imgURL, price, quantity } = cartItem;
+  return (
+    <CartItemContainer>
+      <img src={imgURL} alt={`${name}`} />
+      <ItemDetails>
+        <span>{name}</span>
+        <span>
+          {quantity} x ${price}
+        </span>
+      </ItemDetails>
+    </CartItemContainer>
+  );
+};
 
-export default CartItem
+export default CartItem;

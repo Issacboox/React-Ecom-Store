@@ -2,16 +2,15 @@
 import { useState } from "react";
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/FormInput.component";
-import "./SignInForm.scss";
-import Button from "../button/Button.component";
+import { ButtonsContainer } from "./SignInForm.jsx";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/Button.component.jsx";
 
 const defaultFormFields = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
 };
 
 const SignInForm = () => {
@@ -33,7 +32,7 @@ const SignInForm = () => {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      console.log('user sign in failed', error);
+      console.log("user sign in failed", error);
     }
   };
 
@@ -74,12 +73,19 @@ const SignInForm = () => {
               <b className="text-danger">Sign up here!</b>
             </a>
           </p>
-          <Button buttonType="confirm" type="submit">
+          {/* <Button buttonType="confirm" type="submit">
             Sign In
-          </Button>
-          <Button buttonType="google" onClick={signInWithGoogle}>
-            Sign In With Google
-          </Button>
+          </Button> */}
+          <ButtonsContainer>
+          <Button buttonType={BUTTON_TYPE_CLASSES.confirm}>Sign In</Button>
+            <Button
+              buttonType={BUTTON_TYPE_CLASSES.googles}
+              type="button"
+              onClick={signInWithGoogle}
+            >
+              Sign In With Google
+            </Button>
+          </ButtonsContainer>
         </form>
       </div>
     </div>

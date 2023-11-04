@@ -10,10 +10,10 @@ import "./shop.style.scss";
 
 const Shop = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     const getCategoriesMap = async () => {
-      const categoriesArray = await getCategoriesAndDocuments();
-      console.log(categoriesArray)
+      const categoriesArray = await getCategoriesAndDocuments('categories');
       dispatch(setCategories(categoriesArray));
     };
 
@@ -21,15 +21,13 @@ const Shop = () => {
   }, [dispatch]);
 
   return (
-    
-    <div className="bg-page">
-      <Routes>
-        <Route index element={<CategoriesPreview />} />
-        <Route path=':category' element={<Category />} />
-      </Routes>
-    </div>
-
+    <Routes>
+      <Route index element={<CategoriesPreview />} />
+      <Route path=':category' element={<Category />} />
+    </Routes>
   );
 };
 
 export default Shop;
+
+

@@ -7,7 +7,7 @@ import {
 
 import FormInput from "../form-input/FormInput.component";
 import "./signup.style.scss";
-import Button from "../button/Button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../button/Button.component";
 
 // Initialize default form fields
 const defaultFormFields = {
@@ -116,7 +116,7 @@ const SignUpForm = () => {
                 <b className="text-danger">Sign in here!</b>
               </a>
             </p>
-            <Button buttonType="confirm" type="submit">
+            <Button buttonType={BUTTON_TYPE_CLASSES.confirm} type="submit">
               Sign up
             </Button>
           </form>
