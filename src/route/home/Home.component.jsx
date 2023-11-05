@@ -54,7 +54,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="pb-5">
+    <div className="pb-5" style={{overflow:'hidden'}}>
       {/* <Outlet/> */}
       <Directory menu={Menu} />
     </div>

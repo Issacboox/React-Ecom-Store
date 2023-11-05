@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const BaseButton = styled.button`
   min-width: 165px;
@@ -8,10 +8,11 @@ export const BaseButton = styled.button`
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
+  border-radius: 20px;
   background-color: black;
   color: white;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
+  font-family: "Open Sans Condensed";
   font-weight: bolder;
   border: none;
   cursor: pointer;
@@ -35,19 +36,29 @@ export const GoogleSignInButton = styled(BaseButton)`
   }
 `;
 
-
 export const GoogleSignInButtons = styled(BaseButton)`
-  /* Styles for GoogleSignInButtons */
+  background-color: red;
+  color: white;
+
+  &:hover {
+    background-color: pink;
+    border: none;
+  }
 `;
 
 export const ConfirmButton = styled(BaseButton)`
-  /* Styles for ConfirmButton */
+    background-color: #235e14;;
+     color: white;
+
+  &:hover {
+    background-color: #f8ff29;
+    border: none;
+  }
 `;
 
 export const CartButton = styled(BaseButton)`
   /* Styles for CartButton */
 `;
-
 
 export const InvertedButton = styled(BaseButton)`
   background-color: white;

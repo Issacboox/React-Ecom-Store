@@ -72,6 +72,8 @@ export const SignInContainer = styled.div`
 `;
 
 export const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+  margin-top: 10px;
+  display: grid;
+  row-gap: 10px;
+  /* justify-content: space-between; */
 `;

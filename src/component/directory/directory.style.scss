@@ -2,26 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-page::before {
-    content: "";
-    background: url('https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/363495901_665764935679227_2233761305744879134_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeGo4ef_xO6cLCG9SJRP0wzyJ_NJ4HlfNIEn80ngeV80gXun3M_kv3CX5qsRWGQ9RdC0dxu3QgRSAHhHkci0FYAP&_nc_ohc=Y4FGN8ALpikAX9THkug&_nc_ht=scontent.fbkk7-2.fna&oh=03_AdTSXZFUpwC0Jr0HOPrn7fSsWrkZs0oqPpdyRxysJOH7tQ&oe=6569915D');
-    background-repeat: no-repeat;
-    background-repeat: repeat-x;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.1; /* Set the opacity to 0.2 for the background image overlay */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
 
 .home-page{
     display: block;
     margin-left: 10%;
     margin-right: 10%;
+
 }
 .main {
   display: flex;
@@ -42,63 +28,42 @@
     margin-top: 30px;
     font-family:Mitr;
     text-align: center;
-}
-.topic-header > h1{
-  text-align: center;
-  font-size: 4rem;
-  position: relative;
-  bottom: 300px;
-  font-weight: 600;
-  font-family: Mitr ;
-}
-.topic-header > span {
-  font-size: 1.7rem;
-  position: relative;
-  text-align: center;
-  background-color: rgb(255, 176, 7);
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-  left: 550px;
-  bottom: 310px;
-  
-}
-
-.topic-header > button> a {
-  color: white;
-}
-
-.topic-header > button {
-  background-color: rgb(255, 176, 7);
-  padding: 15px 50px;
-  border-radius: 20px;
-  font-size: 1.4rem;
-  font-weight: 600;
-  position: relative;
-  bottom: 280px;
-  left: 940px;
-}
-.topic-header > button:hover {
-  background-color: rgb(255, 0, 0)
+    
 }
 
 .imageHeader{
   width: 100%;
-  height: 750px;
-  margin-top: 5px;
+  height: 570px;
+  // margin-top: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
 }
 .imageHeader > img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
-  opacity: 0.8;
-  // backdrop-filter: blur(800px); /* Adjust the blur radius as needed */
+  object-fit: cover;
+  opacity: 1;
+  backdrop-filter: blur(800px); /* Adjust the blur radius as needed */
   background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
   z-index: 1;
-  // -webkit-filter: blur(4px);
-  // // -moz-filter: blur(5px);
-  // // -o-filter: blur(5px);
-  // // -ms-filter: blur(5px);
-  // // filter: blur(5px);
+
+}
+
+.shop-button {
+  position: relative;
+  bottom: 220px;
+  right: 970px;
+  margin-right: 20px;
+  background-color: #74b886;
+  border-radius: 20px;
+  padding: 10px 40px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  transition: background-color 0.3s; /* Add a smooth transition for background color */
+}
+
+.shop-button:hover {
+  background-color: #4a8f67; /* Change the background color on hover */
+  /* You can add more styles for the hover state if needed */
 }

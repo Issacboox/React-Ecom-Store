@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   clearItemFromCart,
   addItemToCart,
   removeItemFromCart,
-} from '../../store/cart/cart.action';
-import { selectCartItems } from '../../store/cart/cart.selector';
+} from "../../store/cart/cart.action";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 import {
   CheckoutItemContainer,
@@ -16,7 +16,7 @@ import {
   Arrow,
   Value,
   RemoveButton,
-} from './checkout.style';
+} from "./checkout.style";
 
 const CheckoutItem = ({ cartItem }) => {
   const { name, imgURL, price, quantity } = cartItem;

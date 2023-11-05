@@ -5,7 +5,7 @@ import Header from "./header.component";
 // const welcomeTxt = 'ยินดีต้อนรับสู่ร้านถั่วงอก 👏'
 const Directory = ({ menu }) => {
   return (
-    <div className="">
+    <div>
      <Header />
     <div className="home-page">
     
