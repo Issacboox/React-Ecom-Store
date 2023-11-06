@@ -1,13 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import {
-  createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils";
 
+import { useDispatch } from "react-redux";
 import FormInput from "../form-input/FormInput.component";
 import "./signup.style.scss";
 import Button, {BUTTON_TYPE_CLASSES} from "../button/Button.component";
+import { signUpStart } from "../../store/user/user.action";
 
 // Initialize default form fields
 const defaultFormFields = {
@@ -19,6 +17,7 @@ const defaultFormFields = {
 
 // Define the SignUpForm component
 const SignUpForm = () => {
+  const dispatch = useDispatch();
   // State management using useState
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
@@ -40,14 +39,7 @@ const SignUpForm = () => {
 
     try {
       // Attempt to create a user with email and password
-      const { user } = await createAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      // Create a user document with user information
-      await createUserDocumentFromAuth(user, { displayName });
-      alert("Sign up Complete ✅");
-      // Reset the form fields
+      dispatch(signUpStart(email, password, displayName))
       resetFormFields();
     } catch (error) {
       // Handle different types of errors

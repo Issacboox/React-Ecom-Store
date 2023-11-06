@@ -30,12 +30,7 @@
  
 // }
 // .formSignUp > form > input{
-//     outline: dashed #c9d6d4;
-//     border-radius: 20px ;
-//     margin-top: 5px;
-//     margin-bottom: 5px;
-//     color: black;
-//     padding: 10px;
+  
 // }
 
 // .formSignUp > form > input:focus{

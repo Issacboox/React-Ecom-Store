@@ -1,0 +1,5 @@
+export const ORDER_ACTION_TYPES = {
+    ORDER_START:'order/ORDER_START',
+    ORDER_SUCCESS:'order/ORDER_SUCCESS',
+    ORDER_FAILED:'order/ORDER_FAILED'
+}
