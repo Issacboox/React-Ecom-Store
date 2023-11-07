@@ -1,24 +1,25 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   BaseButton,
   GoogleSignInButton,
   InvertedButton,
-} from '../button/Button.style.jsx';
+} from "../button/Button.style.jsx";
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
-  width: 340px;
+  width: 350px;
   height: 440px;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid black;
+  border: 4px solid #c3c3c3;
   background-color: white;
-  top: 90px;
-  right: 40px;
+  top: 75px;
+  right: 15px;
   z-index: 5;
-
+  border-radius: 30px;
+  
   ${BaseButton},
   ${GoogleSignInButton},
   ${InvertedButton} {

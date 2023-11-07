@@ -47,6 +47,7 @@ export const GoogleSignInButtons = styled(BaseButton)`
 `;
 
 export const ConfirmButton = styled(BaseButton)`
+    margin-top: 10px;
     background-color: #235e14;;
      color: white;
 

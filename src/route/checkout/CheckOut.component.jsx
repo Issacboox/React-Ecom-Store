@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import validator from "validator";
+// import validator from "validator";
 import {
   selectCartItems,
   selectCartTotal,
@@ -10,9 +10,11 @@ import "./formPayment.style.scss";
 import CheckoutItem from "../../component/checkout-item/checkout-item.component";
 import {
   CheckoutContainer,
-  CheckoutHeader,
-  HeaderBlock,
+  // CheckoutHeader,
+  // HeaderBlock,
   Total,
+  Topic,
+  FormPayment
 } from "./CheckOut.style";
 import FormInput from "../../component/form-input/FormInput.component";
 import Button, {
@@ -65,28 +67,13 @@ const Checkout = () => {
 
   return (
     <CheckoutContainer>
-      <CheckoutHeader>
-        <HeaderBlock>
-          <span>Product</span>
-        </HeaderBlock>
-        <HeaderBlock>
-          <span>Description</span>
-        </HeaderBlock>
-        <HeaderBlock>
-          <span>Quantity</span>
-        </HeaderBlock>
-        <HeaderBlock>
-          <span>Price</span>
-        </HeaderBlock>
-        <HeaderBlock>
-          <span>Remove</span>
-        </HeaderBlock>
-      </CheckoutHeader>
+      <Topic>Checkout📌</Topic>
+      
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <Total>💰 Total: {cartTotal.toLocaleString()} Bath</Total>
-      <form onSubmit={handleSubmitPayment}>
+      <Total>💰 Total: {cartTotal.toLocaleString()} Bath 💰</Total>
+      <FormPayment onSubmit={handleSubmitPayment}>
         <FormInput
           label="🪴 Name"
           type="text"
@@ -115,8 +102,9 @@ const Checkout = () => {
         <Button buttonType={BUTTON_TYPE_CLASSES.confirm} type="submit">
           Order now
         </Button>
-      </form>
+      </FormPayment>
     </CheckoutContainer>
+    
   );
 };
 

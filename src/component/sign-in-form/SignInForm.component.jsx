@@ -5,10 +5,14 @@ import { useState } from "react";
 //   signInAuthUserWithEmailAndPassword,
 // } from "../../utils/firebase/firebase.utils";
 import { useDispatch } from "react-redux";
-import { googleSignInStart, emailSignInStart } from '../../store/user/user.action.js'
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from "../../store/user/user.action.js";
 import FormInput from "../form-input/FormInput.component";
 import { ButtonsContainer } from "./SignInForm.jsx";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/Button.component.jsx";
+import { redirect } from "react-router-dom";
 
 const defaultFormFields = {
   email: "",
@@ -27,6 +31,7 @@ const SignInForm = () => {
   const signInWithGoogle = async () => {
     dispatch(googleSignInStart());
   };
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -34,8 +39,10 @@ const SignInForm = () => {
     try {
       dispatch(emailSignInStart(email, password));
       resetFormFields();
+      // alert("Sign in Complete 🌟💌");
+      // window.location.href = "/shop";
     } catch (error) {
-      console.log('user sign in failed', error);
+      console.log("user sign in failed", error);
     }
   };
 
@@ -80,7 +87,9 @@ const SignInForm = () => {
             Sign In
           </Button> */}
           <ButtonsContainer>
-          <Button buttonType={BUTTON_TYPE_CLASSES.confirm} type="submit">Sign In</Button>
+            <Button buttonType={BUTTON_TYPE_CLASSES.confirm} type="submit">
+              Sign In
+            </Button>
             <Button
               buttonType={BUTTON_TYPE_CLASSES.google}
               type="button"

@@ -21,6 +21,7 @@ import {
   writeBatch,
   query,
   getDocs,
+  // Firestore,
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -33,8 +34,8 @@ const firebaseConfig = {
   appId: "1:1076004065498:web:60d41f2f8cc9dd322855e3",
 };
 
-
-const firebaseApp = initializeApp(firebaseConfig);
+// export const firestore = firebase.firestore();
+export const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -67,9 +68,7 @@ export const addCollectionAndDocuments = async (
   console.log('done');
 };
 
-export const addOrder = async(
-  
-)
+
 
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, 'categories');

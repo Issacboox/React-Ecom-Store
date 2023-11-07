@@ -1,47 +1,156 @@
 import "./directory.style.scss";
-// import headerimage from '../../assets/img/header.png'
+import headerimage from "../../assets/img/header.png";
+
 const Header = () => {
   return (
-    <div className="imageHeader">
-      <img
-        src="https://img.freepik.com/premium-photo/green-organic-peas-bowl-concept-homemade-preparations-fast-cooking-healthy-vegetarian-food-concept_111869-1975.jpg?w=1380"
-        alt=""
-      />
-      <div className="d-flex row justify-content-end">
-        <div className="text-end">
-          <span
-            style={{
-              fontSize: "2rem",
-              position: "relative",
-              bottom: "360px",
-              marginRight: "20px",
-              backgroundColor: "#74b886",
-              borderRadius: "20px",
-              padding: "10px",
-              color: "white",
-            }}
-          >
-            Your Comfort is Our Business
-          </span>
-          <h1
-            style={{
-              fontSize: "3.3rem",
-              marginRight: "20px",
-              position: "relative",
-              bottom: "350px",
-              fontWeight: "600",
-              textShadow:"2px 2px #fff",
-              fontFamily:"Mitr"
-            }}
-          >
-            We Bring the Store to Your Door
-          </h1>
-          <a href="/shop">
-            <button className="shop-button">Shop Now</button>
-          </a>
+    <>
+      <div id="carouselExampleCaptions" className="carousel slide">
+        <div className="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            className="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={headerimage} className="d-block w-100" alt="..." />
+            <div className="carousel-caption d-none d-md-block">
+              <h5
+                style={{
+                  color: "black",
+                  fontSize: "5rem",
+                  fontFamily: "Mitr",
+                  position: "relative",
+                  bottom: "90px",
+                }}
+              >
+                Welcome to our Store
+              </h5>
+              <a href="/shop" style={{}}>
+                <button
+                  style={{
+                    position: "relative",
+                    bottom: "90px",
+                    color: "black",
+                    fontSize: "1.7rem",
+                    backgroundColor: "#a6dea6",
+                    padding:'10px 40px',
+                    borderRadius:'20px',
+                    
+                  }}
+                >
+                  Shop Now!
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img src={headerimage} className="d-block w-100" alt="..." />
+            <div className="carousel-caption d-none d-md-block">
+            <h5
+                style={{
+                  color: "black",
+                  fontSize: "5rem",
+                  fontFamily: "Mitr",
+                  position: "relative",
+                  bottom: "90px",
+                }}
+              >
+                FEEL FREE TO CONTACT US ☎️
+              </h5>
+              <a href="/shop" style={{}}>
+                <button
+                  style={{
+                    position: "relative",
+                    bottom: "90px",
+                    color: "black",
+                    fontSize: "1.7rem",
+                    backgroundColor: "#a6dea6",
+                    padding:'10px 40px',
+                    borderRadius:'20px',
+                    
+                  }}
+                >
+                  Shop Now!
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img src={headerimage} className="d-block w-100" alt="..." />
+            <div className="carousel-caption d-none d-md-block">
+            <h5
+                style={{
+                  color: "black",
+                  fontSize: "5rem",
+                  fontFamily: "Mitr",
+                  position: "relative",
+                  bottom: "90px",
+                }}
+              >
+                Welcome to our Store
+              </h5>
+              <a href="/shop" style={{}}>
+                <button
+                  style={{
+                    position: "relative",
+                    bottom: "90px",
+                    color: "black",
+                    fontSize: "1.7rem",
+                    backgroundColor: "#a6dea6",
+                    padding:'10px 40px',
+                    borderRadius:'20px',
+                    
+                  }}
+                >
+                  Shop Now!
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
-    </div>
+    </>
   );
 };
 

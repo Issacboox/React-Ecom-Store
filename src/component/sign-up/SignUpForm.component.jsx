@@ -41,6 +41,7 @@ const SignUpForm = () => {
       // Attempt to create a user with email and password
       dispatch(signUpStart(email, password, displayName))
       resetFormFields();
+      alert('Create account complete ✅')
     } catch (error) {
       // Handle different types of errors
       if (error.code === "auth/email-already-in-use") {
